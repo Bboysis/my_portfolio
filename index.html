@@ -1,0 +1,772 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sisay Abebayew — Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+<header>
+    <div class="container">
+        <a href="#" class="logo">
+            <!-- Profile Photo as Logo -->
+            <img src="images/1.jpg" alt="Sisay Abebayew" class="logo-profile" />
+            Sisay.dve<span></span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="nav">
+            <a href="#about" data-key="nav-about">About</a>
+            <a href="#skills" data-key="nav-skills">Skills</a>
+            <a href="#projects" data-key="nav-projects">Projects</a>
+            <a href="#services" data-key="nav-services">Services</a>
+            <a href="#contact" class="nav-cta" data-key="nav-contact">Contact</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                  <i class="fas fa-moon"></i>
+                     </button>
+             <!-- Language Toggle -->
+         <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+    <span class="lang-text">🇪🇹 አማ</span>
+</button>
+        </nav>
+    </div>
+</header>
+
+    <!-- ===== HERO ===== -->
+<section class="hero" id="home">
+    <!-- Video Background -->
+    <div class="hero-video-bg">
+        <video autoplay muted loop playsinline id="heroVideo">
+            <source src="images/Twinkling-Stars-Animation.mp4" type="video/mp4" />
+            <!-- Fallback image if video doesn't load -->
+            <img src="images/Twinkling-Stars-Animation.mp4" alt="Background" />
+        </video>
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container">
+        <div class="hero-content">
+            <p class="hero-greeting" data-key="hero-greeting">👋 Hello, I'm</p>
+            <h1>
+                <span data-key="hero-name">Sisay</span> <span class="highlight" data-key="hero-lastname"></span>
+            </h1>
+            <p class="hero-title" data-key="hero-title">Full-Stack Developer &amp; Digital Solutions Architect</p>
+            <p class="hero-description" data-key="hero-description">
+                I build complete, modern systems that solve real-world problems.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary" data-key="hero-btn-work">View My Work</a>
+                <a href="#contact" class="btn-secondary" data-key="hero-btn-contact">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="profile-placeholder">
+                <img src="images/1.jpg" alt="Sisay Abebayew" />
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+<section id="about" class="section-bg-about">
+    <div class="section-overlay"></div>
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="images/2.jpg" alt="Sisay Abebayew" />
+            </div>
+            <div class="about-text">
+                <h2 class="section-title" data-key="about-title">About Me</h2>
+                <h3 data-key="about-subtitle">Hi There! I'm Sisay Abebayew</h3>
+                <p class="about-role" data-key="about-role">Full-Stack Developer &amp; Digital Solutions Architect</p>
+                <p data-key="about-text1">
+                    I am a passionate developer with a strong focus on building complete digital solutions.
+                    I chose Computer Science because I enjoy technology, problem-solving,
+                    and turning ideas into real, functional applications.
+                </p>
+                <p data-key="about-text2">
+                    I focus on building complete, practical, and user-friendly systems
+                    rather than just creating attractive interfaces. I enjoy solving
+                    real-world problems, learning new technologies, and turning ideas
+                    into functional websites and applications.
+                </p>
+                <p data-key="about-text3">
+                    My goal is to become a highly skilled full-stack developer, work on
+                    challenging real-world projects, gain professional experience, and
+                    eventually build and lead my own software development agency.
+                </p>
+                <div class="about-details">
+                    <div class="detail-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span><strong data-key="about-experience">Experience:</strong> <span data-key="about-experience-value">8+ Years</span></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <span><strong data-key="about-phone">Phone:</strong> +251 965 681 966</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><strong data-key="about-email">Email:</strong> sisayabebayew@gmail.com</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span><strong data-key="about-location">From:</strong> Addis Ababa, Ethiopia</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-language"></i>
+                        <span><strong data-key="about-language">Language:</strong> Amharic, English</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-briefcase"></i>
+                        <span><strong data-key="about-freelance">Freelance:</strong> Available</span>
+                    </div>
+                </div>
+                <a href="cv.pdf" class="btn-primary" style="margin-top:10px;" data-key="about-cv">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ===== STATISTICS SECTION ===== -->
+<section id="statistics" class="section-bg-stats">
+    <div class="section-overlay"></div>
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" data-count="10">0</div>
+                <div class="stat-label" data-key="stats-projects">Projects Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-count="8">0</div>
+                <div class="stat-label" data-key="stats-websites">Websites Built</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-count="5">0</div>
+                <div class="stat-label" data-key="stats-systems">Management Systems</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-count="8">0</div>
+                <div class="stat-label" data-key="stats-years">Years Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-count="12">0</div>
+                <div class="stat-label" data-key="stats-clients">Happy Clients</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-count="15">0</div>
+                <div class="stat-label" data-key="stats-total">Total Projects</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+<section id="skills" class="section-bg-skills">
+    <div class="section-overlay"></div>
+    <div class="container">
+        <h2 class="section-title" data-key="skills-title">My Skills</h2>
+        <p class="section-subtitle" data-key="skills-subtitle">Technologies and tools I work with.</p>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-code"></i></div>
+                <h3>Frontend</h3>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>Bootstrap 5</li>
+                    <li>Tailwind CSS</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-server"></i></div>
+                <h3>Backend</h3>
+                <ul>
+                    <li>PHP</li>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>API Integration</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-database"></i></div>
+                <h3>Database</h3>
+                <ul>
+                    <li>MySQL</li>
+                    <li>PHPMyAdmin</li>
+                    <li>Database Design</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                <h3>Tools</h3>
+                <ul>
+                    <li>VS Code, Git, GitHub</li>
+                    <li>XAMPP</li>
+                    <li>Figma</li>
+                    <li>Hosting/Deployment</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Programming</h3>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>Java, C++</li>
+                    <li>Python</li>
+                    <li>PHP</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
+                <h3>Other</h3>
+                <ul>
+                    <li>UI/UX Design</li>
+                    <li>Barcode Integration</li>
+                    <li>SEO</li>
+                    <li>Domain &amp; DNS</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+ 
+   
+        <!-- Progress Bars -->
+        <div class="skills-progress">
+            <div class="skill-progress-item">
+                <div class="skill-progress-header">
+                    <span class="skill-progress-name" data-key="skill-php">PHP</span>
+                    <span class="skill-progress-percent">90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                    <div class="skill-progress-fill" data-width="90"></div>
+                </div>
+            </div>
+
+            <div class="skill-progress-item">
+                <div class="skill-progress-header">
+                    <span class="skill-progress-name" data-key="skill-js">JavaScript</span>
+                    <span class="skill-progress-percent">80%</span>
+                </div>
+                <div class="skill-progress-bar">
+                    <div class="skill-progress-fill" data-width="80"></div>
+                </div>
+            </div>
+
+            <div class="skill-progress-item">
+                <div class="skill-progress-header">
+                    <span class="skill-progress-name" data-key="skill-html">HTML &amp; CSS</span>
+                    <span class="skill-progress-percent">95%</span>
+                </div>
+                <div class="skill-progress-bar">
+                    <div class="skill-progress-fill" data-width="95"></div>
+                </div>
+            </div>
+
+            <div class="skill-progress-item">
+                <div class="skill-progress-header">
+                    <span class="skill-progress-name" data-key="skill-mysql">MySQL</span>
+                    <span class="skill-progress-percent">85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                    <div class="skill-progress-fill" data-width="85"></div>
+                </div>
+            </div>
+
+            <div class="skill-progress-item">
+                <div class="skill-progress-header">
+                    <span class="skill-progress-name" data-key="skill-bootstrap">Bootstrap</span>
+                    <span class="skill-progress-percent">90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                    <div class="skill-progress-fill" data-width="90"></div>
+                </div>
+            </div>
+
+            <div class="skill-progress-item">
+                <div class="skill-progress-header">
+                    <span class="skill-progress-name" data-key="skill-java">Java</span>
+                    <span class="skill-progress-percent">75%</span>
+                </div>
+                <div class="skill-progress-bar">
+                    <div class="skill-progress-fill" data-width="75"></div>
+                </div>
+            </div>
+
+            <div class="skill-progress-item">
+                <div class="skill-progress-header">
+                    <span class="skill-progress-name" data-key="skill-python">Python</span>
+                    <span class="skill-progress-percent">70%</span>
+                </div>
+                <div class="skill-progress-bar">
+                    <div class="skill-progress-fill" data-width="70"></div>
+                </div>
+            </div>
+
+            <div class="skill-progress-item">
+                <div class="skill-progress-header">
+                    <span class="skill-progress-name" data-key="skill-uiux">UI/UX Design</span>
+                    <span class="skill-progress-percent">80%</span>
+                </div>
+                <div class="skill-progress-bar">
+                    <div class="skill-progress-fill" data-width="80"></div>
+                </div>
+            </div>
+        </div>
+          
+             
+</section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section-bg-projects">
+        <div class="section-overlay"></div>
+        <div class="container">
+            <h2 class="section-title" data-key="projects-title">My Projects</h2>
+            <p class="section-subtitle" data-key="projects-subtitle">Here are some of the projects I've built. Each one represents a complete solution to a real-world problem.</p>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/pharmacy.png" alt="Pharmacy Management System" />
+                        </div>
+                    <div class="project-body">
+                        <span class="project-category">Management System</span>
+                        <h3>Pharmacy Management System</h3>
+                        <p>Complete pharmacy management solution for managing medicines, inventory, sales, and more.</p>
+                        <div class="project-tags">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/bboysis" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/Sisay Abebayew — Portfolio - Google Chrome 8_5_2026 5_25_43 PM.png" alt="School Management System" />
+                    </div>
+                    <div class="project-body">
+                        <span class="project-category">Management System</span>
+                        <h3>SIS Missford School Management</h3>
+                        <p>Digital school management platform for organizing students, administration, and records.</p>
+                        <div class="project-tags">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://sis-missford.infinityfreeapp.com/" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/bboysis" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/🏨 Hotel Management - Google Chrome 8_5_2026 5_22_51 PM.png" alt="Hotel Management System" />
+                        </div>
+                    <div class="project-body">
+                        <span class="project-category">Management System</span>
+                        <h3>Hotel Management System</h3>
+                        <p>Web-based hotel system for managing rooms, customers, bookings, and authentication.</p>
+                        <div class="project-tags">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://trinity-hotel.infinityfree.io" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/bboysis" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/e-commers.png" alt="E-Commerce Website" />
+                    </div>
+                    <div class="project-body">
+                        <span class="project-category">E-Commerce</span>
+                        <h3>E-Commerce Website</h3>
+                        <p>Modern online shopping platform with product browsing, cart, checkout, and order management.</p>
+                        <div class="project-tags">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/bboysis" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/Coach Tesfaye _ Personal Trainer - Google Chrome 7_29_2026 10_50_38 PM.png" alt="Gym Trainer Website" />
+                    </div>
+                    <div class="project-body">
+                        <span class="project-category">Business Website</span>
+                        <h3>Personal Gym Trainer Website</h3>
+                        <p>Professional personal trainer website with services, programs, and contact options.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://coach-tesfaye-website.netlify.app/" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/bboysis" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/Customer Login - Hotel - Google Chrome 7_4_2026 5_46_11 PM.png" alt="QR Menu System" />
+                    </div>
+                    <div class="project-body">
+                        <span class="project-category">Business System</span>
+                        <h3>QR Menu System</h3>
+                        <p>Digital menu system using QR codes for restaurants and hotels — contactless dining.</p>
+                        <div class="project-tags">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/bboysis" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="section-bg-services">
+        <div class="section-overlay"></div>
+        <div class="container">
+            <h2 class="section-title" data-key="services-title">My Services</h2>
+            <p class="section-subtitle" data-key="services-subtitle">Here are the services I offer. Each one is designed to help you build a complete digital solution.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Modern, responsive websites for personal, business, and organizational needs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Web Applications</h3>
+                    <p>Functional applications and complete systems designed to solve real-world problems.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>UI/UX Design</h3>
+                    <p>Clean, modern, user-friendly interfaces focused on usability and visual quality.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-database"></i></div>
+                    <h3>Database Systems</h3>
+                    <p>Secure and organized database-driven systems for managing business data.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-wrench"></i></div>
+                    <h3>Website Maintenance</h3>
+                    <p>Updates, bug fixes, improvements, and ongoing technical support.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-plug"></i></div>
+                    <h3>API Development</h3>
+                    <p>API integration and backend services for connecting applications and systems.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h3>E-commerce Solutions</h3>
+                    <p>Online stores with product management, customers, and database integration.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Custom CMS</h3>
+                    <p>Customized content management systems for efficient website content management.</p>
+                </div>
+            </div>
+            <div class="view-all">
+                <a href="#contact" class="btn-primary" data-key="services-quote">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+    <!-- ===== TESTIMONIALS SECTION ===== -->
+<section id="testimonials" class="section-bg-testimonials">
+    <div class="section-overlay"></div>
+    <div class="container">
+        <h2 class="section-title" data-key="testimonials-title">What Clients Say</h2>
+        <p class="section-subtitle" data-key="testimonials-subtitle">Testimonials from clients I've worked with.</p>
+
+        <div class="testimonials-slider" id="testimonialSlider">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card active">
+                <div class="testimonial-content">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Sisay built a complete pharmacy management system for our business. 
+                        The system is fast, reliable, and easy to use. Highly recommended!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="images/clint2.jpg" alt="Client 1" />
+                        <div class="testimonial-author-info">
+                            <h4>Dr. Samuel T.</h4>
+                            <span>Pharmacy Owner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "The school management system Sisay developed transformed our administrative 
+                        workflow. Everything is now organized and digital."
+                        </p>
+                    <div class="testimonial-author">
+                        <img src="images/clint1.jpg" alt="Client 2" />
+                        <div class="testimonial-author-info">
+                            <h4>Mrs. Tsion A.</h4>
+                            <span>School Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Working with Sisay was a great experience. He delivered our hotel management 
+                        system on time and exceeded our expectations."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="images/clint2.jpg" alt="Client 3" />
+                        <div class="testimonial-author-info">
+                            <h4>Mr. Dawit K.</h4>
+                            <span>Hotel Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Sisay's technical skills and attention to detail are impressive. He built a 
+                        beautiful e-commerce website that has increased our sales."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="images/clint1.jpg" alt="Client 4" />
+                        <div class="testimonial-author-info">
+                            <h4>Ms. Meron T.</h4>
+                            <span>Business Owner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dots Navigation -->
+        <div class="testimonial-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+        </div>
+    </div>
+</section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section-bg-contact">
+        <div class="section-overlay"></div>
+        <div class="container">
+            <h2 class="section-title" data-key="contact-title">Get In Touch</h2>
+            <p class="section-subtitle" data-key="contact-subtitle">Have a project in mind? Let's work together. Fill out the form below and I'll get back to you.</p>
+            <div class="contact-grid">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name" data-key="contact-name"><i class="fas fa-user"></i> Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name"   />
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-key="contact-email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email"   />
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" data-key="contact-subject"><i class="fas fa-tag"></i> Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject"   />
+                    </div>
+                    <div class="form-group">
+                        <label for="projectType" data-key="contact-project"><i class="fas fa-project-diagram"></i> Project Type</label>
+                        <select id="projectType" name="projectType">
+                            <option value="web-development">Web Development</option>
+                            <option value="web-application">Web Application</option>
+                            <option value="e-commerce">E-Commerce</option>
+                            <option value="ui-ux-design">UI/UX Design</option>
+                            <option value="database-system">Database System</option>
+                            <option value="maintenance">Website Maintenance</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-key="contact-phone"><i class="fas fa-phone"></i> Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone"   />
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-key="contact-message"><i class="fas fa-comment"></i> Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Your Message"> </textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width:100%;" data-key="contact-send">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+                <div class="contact-info">
+                    <h3 data-key="contact-info"><i class="fas fa-info-circle"></i> Contact Info</h3>
+                    <p>
+                        I'm always open to new opportunities and collaborations. Feel free to reach out!
+                    </p>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong data-key="contact-email-label">Email</strong>
+                            <a href="mailto:sisayabebayew@gmail.com">sisayabebayew@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong data-key="contact-phone-label">Phone / WhatsApp</strong>
+                            <a href="https://wa.me/251965681966">+251 965 681 966</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong data-key="contact-location-label">Location</strong>
+                            <span>Addis Ababa, Ethiopia</span>
+                            <span style="font-size:14px; opacity:0.6;">Office: Kazanchis</span>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/bboysis" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://linkr=edin.com/in/sisay abebayew" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/bboysis" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/sisay abebayew" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://x.com/bboysis" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://t.me/bboysis" aria-label="telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://wa.me/+251965681966" aria-label="whatsapp"><i class="fab fa-whatsapp"></i></a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- ===== WEATHER WIDGET ===== -->
+<div class="weather-widget" id="weatherWidget">
+    <div class="weather-icon">
+        <i class="fas fa-cloud-sun"></i>
+    </div>
+    <div class="weather-info">
+        <div class="weather-temp" id="weatherTemp">--°C</div>
+        <div class="weather-desc" id="weatherDesc" data-key="weather-loading">Loading weather...</div>
+        <div class="weather-location" id="weatherLocation">Addis Ababa, ET</div>
+    </div>
+    <div class="weather-details">
+        <div class="weather-detail">
+            <i class="fas fa-tint"></i>
+            <span id="weatherHumidity">--%</span>
+        </div>
+        <div class="weather-detail">
+            <i class="fas fa-wind"></i>
+            <span id="weatherWind">-- km/h</span>
+        </div>
+    </div>
+</div>
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> <span data-key="footer-name">Sisay Abebayew</span>. <span data-key="footer-rights">All rights reserved.</span></p>
+            <p style="font-size:13px; opacity:0.4; margin-top:4px;" data-key="footer-built">Built with  by Sisay.dve</p>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <!-- ===== WHATSAPP ===== -->
+    <a id="whatsapp" href="https://t.me/bboysis" target="_blank" aria-label="Chat on telegram">
+        <i class="fab fa-telegram"></i>
+    </a>
+
+<!-- ===== SNOW EFFECT ===== -->
+<div id="snowContainer"></div>
+<button id="snowToggle" class="snow-toggle" aria-label="Toggle Snow">
+    <i class="fas fa-snowflake"></i>
+</button>
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
