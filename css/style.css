@@ -2927,28 +2927,6 @@ section .container {
         padding: 12px 14px;
     }
 }
-/* ===== 3D CARD TILT ===== */
-.project-card {
-    transform-style: preserve-3d;
-    perspective: 800px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.project-card:hover {
-    transform: rotateY(8deg) rotateX(4deg) scale(1.02);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-}
-
-/* Light mode */
-[data-theme="light"] .project-card:hover {
-    box-shadow: 0 25px 60px rgba(74, 108, 247, 0.15);
-}
-.globe-container {
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
-    position: relative;
-}
 /* ===== TESTIMONIALS SECTION ===== */
 .section-bg-testimonials {
     background: url('../images/best.jpg') center/cover fixed !important;

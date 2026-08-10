@@ -492,7 +492,6 @@ function updateWeatherUI(data) {
 document.addEventListener('DOMContentLoaded', function() {
     fetchWeather();
 });
-
 // ===== SNOW EFFECT =====
 let snowActive = localStorage.getItem('snow') === 'true';
 const snowContainer = document.getElementById('snowContainer');
@@ -553,6 +552,5 @@ document.addEventListener('DOMContentLoaded', function() {
         stopSnow();
     }
 });
-
 console.log('🚀 Portfolio loaded successfully!');
 console.log('👋 Built by siay dve');
