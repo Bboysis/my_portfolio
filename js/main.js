@@ -492,6 +492,7 @@ function updateWeatherUI(data) {
 document.addEventListener('DOMContentLoaded', function() {
     fetchWeather();
 });
+
 // ===== SNOW EFFECT =====
 let snowActive = localStorage.getItem('snow') === 'true';
 const snowContainer = document.getElementById('snowContainer');
@@ -551,6 +552,131 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         stopSnow();
     }
+});
+// ============================================
+// ===== 3D ROTATING GLOBE =====
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('globeContainer');
+    
+    // Check if container exists
+    if (!container) {
+        console.log('❌ Globe container not found!');
+        return;
+    }
+    
+    // Check if Three.js is loaded
+    if (typeof THREE === 'undefined') {
+        console.log('❌ Three.js not loaded!');
+        container.innerHTML = '<p style="color: #64ffda; text-align: center; font-size: 14px;">3D Globe loading...</p>';
+        return;
+    }
+    
+    console.log('✅ Three.js loaded, building globe...');
+    
+    // Create Scene
+    const scene = new THREE.Scene();
+    
+    // Create Camera
+    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+    camera.position.z = 3;
+    
+    // Create Renderer
+    const renderer = new THREE.WebGLRenderer({ 
+        alpha: true, 
+        antialias: true 
+    });
+    
+    // Get container size
+    const size = container.clientWidth || 280;
+    renderer.setSize(size, size);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    container.appendChild(renderer.domElement);
+    
+    // --- Create Globe ---
+    const geometry = new THREE.SphereGeometry(1.2, 48, 48);
+    const material = new THREE.MeshStandardMaterial({
+        color: 0x64ffda,
+        wireframe: true,
+        metalness: 0.6,
+        roughness: 0.2,
+        transparent: true,
+        opacity: 0.9
+    });
+    const globe = new THREE.Mesh(geometry, material);
+    scene.add(globe);
+    
+    // --- Inner Glow ---
+    const innerGeo = new THREE.SphereGeometry(1.0, 32, 32);
+    const innerMat = new THREE.MeshStandardMaterial({
+        color: 0x64ffda,
+        transparent: true,
+        opacity: 0.12,
+        emissive: 0x64ffda,
+        emissiveIntensity: 0.3
+    });
+    const innerSphere = new THREE.Mesh(innerGeo, innerMat);
+    scene.add(innerSphere);
+    
+    // --- Particles ---
+    const particlesGeo = new THREE.BufferGeometry();
+    const count = 400;
+    const positions = new Float32Array(count * 3);
+    for (let i = 0; i < count * 3; i++) {
+        const r = 1.8 + Math.random() * 0.4;
+        const theta = Math.random() * Math.PI * 2;
+        const phi = Math.acos(2 * Math.random() - 1);
+        positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+        positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+        positions[i * 3 + 2] = r * Math.cos(phi);
+    }
+    particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const particlesMat = new THREE.PointsMaterial({
+        color: 0x64ffda,
+        size: 0.025,
+        transparent: true,
+        opacity: 0.5
+    });
+    const particles = new THREE.Points(particlesGeo, particlesMat);
+    scene.add(particles);
+    
+    // --- Lights ---
+    const light1 = new THREE.DirectionalLight(0xffffff, 1);
+    light1.position.set(5, 5, 5);
+    scene.add(light1);
+    
+    const light2 = new THREE.DirectionalLight(0x64ffda, 0.3);
+    light2.position.set(-3, -2, -3);
+    scene.add(light2);
+    
+    const ambient = new THREE.AmbientLight(0x404060);
+    scene.add(ambient);
+    
+    // --- Animation ---
+    function animateGlobe() {
+        requestAnimationFrame(animateGlobe);
+        globe.rotation.x += 0.003;
+        globe.rotation.y += 0.006;
+        innerSphere.rotation.x += 0.003;
+        innerSphere.rotation.y += 0.006;
+        particles.rotation.x += 0.0005;
+        particles.rotation.y += 0.001;
+        renderer.render(scene, camera);
+    }
+    animateGlobe();
+    
+    console.log('✅ Globe animation started!');
+    
+    // --- Responsive ---
+    function resizeGlobe() {
+        const newSize = container.clientWidth || 280;
+        renderer.setSize(newSize, newSize);
+        camera.aspect = 1;
+        camera.updateProjectionMatrix();
+    }
+    
+    window.addEventListener('resize', resizeGlobe);
 });
 console.log('🚀 Portfolio loaded successfully!');
 console.log('👋 Built by siay dve');

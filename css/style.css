@@ -1393,35 +1393,35 @@ footer p {
 }
 /* ===== LIGHT MODE SECTION OVERRIDES ===== */
 [data-theme="light"] .section-bg-hero {
-    background: url('../images/ai_pic.jpg') center/cover fixed !important;
+    background: url('../images/best.jpg') center/cover fixed !important;
 }
 
 [data-theme="light"] .section-bg-about {
-    background: url('../images/ai_pic.jpg') center/cover fixed !important;
+    background: url('../images/best.jpg') center/cover fixed !important;
 }
 
 [data-theme="light"] .section-bg-skills {
-    background: url('../images/ai_pic.jpg') center/cover fixed !important;
+    background: url('../images/best.jpg') center/cover fixed !important;
 }
 
 [data-theme="light"] .section-bg-projects {
-    background: url('../images/ai_pic.jpg') center/cover fixed !important;
+    background: url('../images/best.jpg') center/cover fixed !important;
 }
 
 [data-theme="light"] .section-bg-services {
-    background: url('../images/ai_pic.jpg') center/cover fixed !important;
+    background: url('../images/best.jpg') center/cover fixed !important;
 }
 
 [data-theme="light"] .section-bg-stats {
-    background: url('../images/ai_pic.jpg') center/cover fixed !important;
+    background: url('../images/best.jpg') center/cover fixed !important;
 }
 
 [data-theme="light"] .section-bg-testimonials {
-    background: url('../images/ai_pic.jpg') center/cover fixed !important;
+    background: url('../images/best.jpg') center/cover fixed !important;
 }
 
 [data-theme="light"] .section-bg-contact {
-    background: url('../images/ai_pic.jpg') center/cover fixed !important;
+    background: url('../images/best.jpg') center/cover fixed !important;
 }
 
 /* ===== LIGHT MODE OVERLAY — Premium Look ===== */
@@ -1875,7 +1875,7 @@ header .container {
 }
 /* ===== ABOUT SECTION BACKGROUND ===== */
 .section-bg-about {
-    background: url('../images/ai_pic.jpg') center/cover fixed !important;
+    background: url('../images/best.jpg') center/cover fixed !important;
     position: relative;
     min-height: 100vh;
     display: flex;
@@ -2063,7 +2063,7 @@ section .container {
 }
 /* ===== SKILLS SECTION BACKGROUND ===== */
 .section-bg-skills {
-    background: url('../images/ai_pic.jpg') center/cover fixed !important;
+    background: url('../images/best.jpg') center/cover fixed !important;
     position: relative;
     min-height: 100vh;
     display: flex;
@@ -2162,7 +2162,7 @@ section .container {
 }
 /* ===== STATISTICS SECTION BACKGROUND ===== */
 .section-bg-stats {
-    background: url('../images/ai_pic.jpg') center/cover fixed !important;
+    background: url('../images/best.jpg') center/cover fixed !important;
     position: relative;
     padding: 80px 0;
 }
@@ -2265,7 +2265,7 @@ section .container {
 }
 /* ===== PROJECTS SECTION BACKGROUND ===== */
 .section-bg-projects {
-    background: url('../images/ai_pic.jpg') center/cover fixed !important;
+    background: url('../images/best.jpg') center/cover fixed !important;
     position: relative;
     min-height: 100vh;
     display: flex;
@@ -2387,7 +2387,7 @@ section .container {
 }
 /* ===== SERVICES SECTION BACKGROUND ===== */
 .section-bg-services {
-    background: url('../images/ai_pic.jpg') center/cover fixed !important;
+    background: url('../images/best.jpg') center/cover fixed !important;
     position: relative;
     min-height: 100vh;
     display: flex;
@@ -2758,7 +2758,7 @@ section .container {
 }
 /* ===== CONTACT SECTION BACKGROUND ===== */
 .section-bg-contact {
-    background: url('../images/ai_pic.jpg') center/cover fixed !important;
+    background: url('../images/best.jpg') center/cover fixed !important;
     position: relative;
     min-height: 100vh;
     display: flex;
@@ -2927,9 +2927,31 @@ section .container {
         padding: 12px 14px;
     }
 }
+/* ===== 3D CARD TILT ===== */
+.project-card {
+    transform-style: preserve-3d;
+    perspective: 800px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+    transform: rotateY(8deg) rotateX(4deg) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Light mode */
+[data-theme="light"] .project-card:hover {
+    box-shadow: 0 25px 60px rgba(74, 108, 247, 0.15);
+}
+.globe-container {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+}
 /* ===== TESTIMONIALS SECTION ===== */
 .section-bg-testimonials {
-    background: url('../images/ai_pic.jpg') center/cover fixed !important;
+    background: url('../images/best.jpg') center/cover fixed !important;
     position: relative;
     padding: 100px 0;
 }
