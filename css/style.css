@@ -3333,3 +3333,29 @@ nav a:hover {
         height: 6px;
     }
 }
+/* =========================================================
+   MOBILE BACKGROUND FIX
+   Fixes Android Chrome / mobile background rendering
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .section-bg-hero,
+    .section-bg-about,
+    .section-bg-skills,
+    .section-bg-projects,
+    .section-bg-services,
+    .section-bg-stats,
+    .section-bg-testimonials,
+    .section-bg-contact {
+
+        background-image: url('../images/best.jpg') !important;
+        background-position: center center !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+
+        /* IMPORTANT: Don't use fixed on Android */
+        background-attachment: scroll !important;
+    }
+
+}
