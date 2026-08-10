@@ -3333,14 +3333,27 @@ nav a:hover {
         height: 6px;
     }
 }
-/* =========================================================
-   MOBILE BACKGROUND FIX
-   Fixes Android Chrome / mobile background rendering
-   ========================================================= */
+/* ===== SECTION BACKGROUND IMAGES ===== */
 
-@media (max-width: 768px) {
+/* Desktop */
+.section-bg-about,
+.section-bg-skills,
+.section-bg-projects,
+.section-bg-services,
+.section-bg-stats,
+.section-bg-testimonials,
+.section-bg-contact {
+    background: url('../images/best.jpg') center/cover fixed !important;
+    position: relative;
+    padding: 100px 0;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+}
 
-    .section-bg-hero,
+/* ===== MOBILE FIX — All Devices ===== */
+
+/* Tablets */
+@media (max-width: 1024px) {
     .section-bg-about,
     .section-bg-skills,
     .section-bg-projects,
@@ -3348,14 +3361,58 @@ nav a:hover {
     .section-bg-stats,
     .section-bg-testimonials,
     .section-bg-contact {
-
-        background-image: url('../images/best.jpg') !important;
-        background-position: center center !important;
+        background: url('../images/best.jpg') center/cover scroll !important;
         background-size: cover !important;
+        background-position: center !important;
         background-repeat: no-repeat !important;
+        padding: 60px 0 !important;
+        min-height: auto !important;
+    }
+}
 
-        /* IMPORTANT: Don't use fixed on Android */
-        background-attachment: scroll !important;
+/* Mobile Phones */
+@media (max-width: 768px) {
+    .section-bg-about,
+    .section-bg-skills,
+    .section-bg-projects,
+    .section-bg-services,
+    .section-bg-stats,
+    .section-bg-testimonials,
+    .section-bg-contact {
+        background: url('../images/best.jpg') center/cover scroll !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        padding: 50px 0 !important;
+        min-height: auto !important;
     }
 
+    /* Also ensure sections have enough height for content */
+    .section-bg-about .container,
+    .section-bg-skills .container,
+    .section-bg-projects .container,
+    .section-bg-services .container,
+    .section-bg-stats .container,
+    .section-bg-testimonials .container,
+    .section-bg-contact .container {
+        min-height: auto;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .section-bg-about,
+    .section-bg-skills,
+    .section-bg-projects,
+    .section-bg-services,
+    .section-bg-stats,
+    .section-bg-testimonials,
+    .section-bg-contact {
+        background: url('../images/best.jpg') center/cover scroll !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        padding: 40px 0 !important;
+        min-height: auto !important;
+    }
 }
