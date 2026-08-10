@@ -40,6 +40,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+// ===== HERO VIDEO FIX — Force Play on Mobile =====
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('heroVideo');
+    
+    if (video) {
+        // Try to play video
+        video.play().catch(function(error) {
+            console.log('Video autoplay failed:', error);
+            // Show fallback image instead
+            video.style.display = 'none';
+            const fallback = document.createElement('img');
+            fallback.src = 'images/best.jpg';
+            fallback.alt = 'Background';
+            fallback.style.cssText = 'width:100%;height:100%;object-fit:cover;';
+            video.parentNode.appendChild(fallback);
+        });
+        
+        // For iOS/Safari — Force play on user interaction
+        document.addEventListener('touchstart', function() {
+            if (video.paused) {
+                video.play().catch(function() {});
+            }
+        }, { once: true });
+        
+        // Also on click/tap anywhere
+        document.addEventListener('click', function() {
+            if (video.paused) {
+                video.play().catch(function() {});
+            }
+        }, { once: true });
+    }
+});
 // ===== TESTIMONIALS SLIDER =====
 let currentTestimonial = 0;
 const testimonialCards = document.querySelectorAll('.testimonial-card');

@@ -74,10 +74,11 @@
 <section class="hero" id="home">
     <!-- Video Background -->
     <div class="hero-video-bg">
-        <video autoplay muted loop playsinline id="heroVideo">
+        <video autoplay muted loop playsinline id="heroVideo" preload="auto" poster="images/ai_vidio.mp4">
             <source src="images/ai_vidio.mp4" type="video/mp4" />
             <!-- Fallback image if video doesn't load -->
-            <img src="images/ai_vidio.mp4" alt="Background" />
+             <source src="images/ai_vidio.mp4" type="video/webm" />
+             <img src="images/best.jpg" alt="Background" />
         </video>
         <div class="hero-overlay"></div>
     </div>

@@ -217,6 +217,7 @@ nav a:hover::after {
 }
 
 /* Video Background */
+ /* ===== HERO VIDEO BACKGROUND ===== */
 .hero-video-bg {
     position: absolute;
     top: 0;
@@ -231,6 +232,45 @@ nav a:hover::after {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+}
+
+.hero-video-bg video::-webkit-media-controls {
+    display: none !important;
+}
+
+/* Video fallback image */
+.hero-video-bg .video-fallback {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+/* Show fallback when video fails */
+.hero-video-bg video:not([src]) + .video-fallback,
+.hero-video-bg video.error + .video-fallback {
+    display: block;
+}
+
+/* ===== MOBILE VIDEO FIX ===== */
+@media (max-width: 768px) {
+    .hero-video-bg video {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    .hero-video-bg video {
+        display: none;
+    }
+    .hero-video-bg .video-fallback {
+        display: block;
+    }
 }
 
 .hero-video-bg img {
