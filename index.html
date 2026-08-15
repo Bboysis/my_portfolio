@@ -40,35 +40,61 @@
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
+   <!-- ===== HEADER ===== -->
 <header>
     <div class="container">
         <a href="#" class="logo">
-            <!-- Profile Photo as Logo -->
             <img src="images/1.jpg" alt="Sisay Abebayew" class="logo-profile" />
             Sisay.dve<span></span>
         </a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav id="nav">
+
+        <!-- Desktop Navigation -->
+        <nav id="desktopNav">
             <a href="#about" data-key="nav-about">About</a>
             <a href="#skills" data-key="nav-skills">Skills</a>
             <a href="#projects" data-key="nav-projects">Projects</a>
             <a href="#services" data-key="nav-services">Services</a>
             <a href="#contact" class="nav-cta" data-key="nav-contact">Contact</a>
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                  <i class="fas fa-moon"></i>
-                     </button>
-             <!-- Language Toggle -->
-         <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
-    <span class="lang-text">🇪🇹 አማ</span>
-</button>
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+                <span class="lang-text">🇪🇹 አማ</span>
+            </button>
         </nav>
+
+        <!-- 3-Line Hamburger (Mobile Only) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
 </header>
+
+ <!-- ===== MOBILE MENU (Slides from Right) ===== -->
+<nav class="mobile-menu" id="mobileMenu">
+    <ul>
+        <li><a href="#about" data-key="nav-about">About</a></li>
+        <li><a href="#skills" data-key="nav-skills">Skills</a></li>
+        <li><a href="#projects" data-key="nav-projects">Projects</a></li>
+        <li><a href="#services" data-key="nav-services">Services</a></li>
+        <li><a href="#contact" data-key="nav-contact">Contact</a></li>
+        <li>
+            <button class="theme-toggle-mobile" id="themeToggleMobile">
+                <i class="fas fa-moon"></i> <span data-key="theme-label">Dark Mode</span>
+            </button>
+        </li>
+        <li>
+            <button class="lang-toggle-mobile" id="langToggleMobile">
+                <span class="lang-text">🇪🇹 አማ</span>
+            </button>
+        </li>
+    </ul>
+</nav>
+
+<!-- ===== OVERLAY ===== -->
+<div class="overlay" id="overlay"></div>
 
     <!-- ===== HERO ===== -->
 <section class="hero" id="home">
@@ -105,7 +131,7 @@
  
     </div>
 </section>
-
+ 
     <!-- ===== ABOUT SECTION ===== -->
 <section id="about" class="section-bg-about">
     <div class="section-overlay"></div>
@@ -160,9 +186,9 @@
                         <span><strong data-key="about-freelance">Freelance:</strong> Available</span>
                     </div>
                 </div>
-                <a href="cv.pdf" class="btn-primary" style="margin-top:10px;" data-key="about-cv">
-                    <i class="fas fa-download"></i> Download CV
-                </a>
+                <button onclick="window.print()" class="btn-primary">
+    <i class="fas fa-file-pdf"></i> Download PDF
+</button>
             </div>
         </div>
     </div>
@@ -197,6 +223,7 @@
                 <div class="stat-number" data-count="15">0</div>
                 <div class="stat-label" data-key="stats-total">Total Projects</div>
             </div>
+            
         </div>
     </div>
 </section>
@@ -307,7 +334,7 @@
             <div class="skill-progress-item">
                 <div class="skill-progress-header">
                     <span class="skill-progress-name" data-key="skill-mysql">MySQL</span>
-                    <span class="skill-progress-percent">85%</span>
+                    <span class="skill-progress-percent">89%</span>
                 </div>
                 <div class="skill-progress-bar">
                     <div class="skill-progress-fill" data-width="85"></div>
@@ -743,10 +770,32 @@
 
 
                     </div>
+                    
                 </div>
             </div>
         </div>
     </section>
+    <!-- ===== STAR RATING SECTION ===== -->
+<section id="rating" class="section-bg-rating">
+    <div class="section-overlay"></div>
+    <div class="container">
+        <div class="rating-section">
+            <h3 class="rating-title">⭐ Rate My Work</h3>
+            <p class="rating-subtitle">How would you rate my portfolio?</p>
+            
+            <div class="star-rating" id="starRating">
+                <i class="fas fa-star" data-value="1"></i>
+                <i class="fas fa-star" data-value="2"></i>
+                <i class="fas fa-star" data-value="3"></i>
+                <i class="fas fa-star" data-value="4"></i>
+                <i class="fas fa-star" data-value="5"></i>
+            </div>
+            
+            <p class="rating-message" id="ratingMessage">⭐ Click a star to rate!</p>
+            <p class="rating-average">Average: <span id="averageRating">0</span> / 5 (<span id="totalVotes">0</span> votes)</p>
+        </div>
+    </div>
+</section>
 <!-- ===== WEATHER WIDGET ===== -->
 <div class="weather-widget" id="weatherWidget">
     <div class="weather-icon">

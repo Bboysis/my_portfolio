@@ -1,9 +1,91 @@
- // ===== MOBILE MENU =====
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('nav');
+ // ============================================================
+// ===== MOBILE MENU — RIGHT SIDEBAR =====
+// ============================================================
 
-hamburger.addEventListener('click', () => {
-    nav.classList.toggle('open');
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('overlay');
+
+    if (!hamburger || !mobileMenu || !overlay) {
+        console.log('❌ Menu elements not found');
+        return;
+    }
+
+    function openMenu() {
+        mobileMenu.classList.add('open');
+        overlay.classList.add('show');
+        hamburger.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        mobileMenu.classList.remove('open');
+        overlay.classList.remove('show');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Toggle on hamburger click
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (mobileMenu.classList.contains('open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    // Close on overlay click
+    overlay.addEventListener('click', closeMenu);
+
+    // Close on link click
+    document.querySelectorAll('.mobile-menu ul li a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeMenu();
+        }
+    });
+     
+    // ============================================================
+    // ===== MOBILE THEME TOGGLE — WORKING =====
+    // ============================================================
+    const themeToggleMobile = document.getElementById('themeToggleMobile');
+    const themeToggle = document.getElementById('themeToggle');
+
+    if (themeToggleMobile && themeToggle) {
+        themeToggleMobile.addEventListener('click', function(e) {
+            e.stopPropagation();
+            console.log('🔄 Mobile theme toggle clicked!');
+            // Click the desktop toggle
+            themeToggle.click();
+            // Close menu after toggle
+            setTimeout(closeMenu, 300);
+        });
+    }
+
+    // ============================================================
+    // ===== MOBILE LANGUAGE TOGGLE — WORKING =====
+    // ============================================================
+    const langToggleMobile = document.getElementById('langToggleMobile');
+    const langToggle = document.getElementById('langToggle');
+
+    if (langToggleMobile && langToggle) {
+        langToggleMobile.addEventListener('click', function(e) {
+            e.stopPropagation();
+            console.log('🔄 Mobile language toggle clicked!');
+            // Click the desktop toggle
+            langToggle.click();
+            // Close menu after toggle
+            setTimeout(closeMenu, 300);
+        });
+    }
+
+    console.log('✅ Mobile menu fully initialized with working toggles!');
 });
 
 // ===== DARK/LIGHT MODE (SIMPLE VERSION) =====
@@ -232,7 +314,7 @@ const translations = {
         'hero-description': 'I build complete, modern systems that solve real-world problems.',
         'hero-btn-work': 'View My Work',
         'hero-btn-contact': 'Contact Me',
-
+ 
         // About
         'about-title': 'About Me',
         'about-subtitle': 'Hi There! I\'m Sisay Abebayew',
@@ -261,11 +343,11 @@ const translations = {
         // Projects
         'projects-title': 'My Projects',
         'projects-subtitle': 'Here are some of the projects I\'ve built. Each one represents a complete solution to a real-world problem.',
-// Weather
-'weather-loading': 'Loading weather...',
-'weather-unavailable': 'Weather unavailable',
-'weather-humidity': 'Humidity',
-'weather-wind': 'Wind',
+        // Weather
+          'weather-loading': 'Loading weather...',
+          'weather-unavailable': 'Weather unavailable',
+          'weather-humidity': 'Humidity',
+          'weather-wind': 'Wind',
         // Services
         'services-title': 'My Services',
         'services-subtitle': 'All the services that I offer in my field of work are mentioned below.',
@@ -342,11 +424,11 @@ const translations = {
         // Projects
         'projects-title': 'ፕሮጀክቶቼ',
         'projects-subtitle': 'ከገነባኋቸው ፕሮጀክቶች ውስጥ ጥቂቶቹ። እያንዳንዱ ለእውነተኛ ችግር የተሟላ መፍትሄ ነው።',
-// Weather
-'weather-loading': 'የአየር ሁኔታ እየተጫነ ነው...',
-'weather-unavailable': 'የአየር ሁኔታ አይገኝም',
-'weather-humidity': 'እርጥበት',
-'weather-wind': 'ንፋስ',
+        // Weather
+         'weather-loading': 'የአየር ሁኔታ እየተጫነ ነው...',
+         'weather-unavailable': 'የአየር ሁኔታ አይገኝም',
+         'weather-humidity': 'እርጥበት',
+         'weather-wind': 'ንፋስ',
         // Services
         'services-title': 'አገልግሎቶቼ',
         'services-subtitle': 'በሙያዬ መስክ የማቀርባቸው አገልግሎቶች ከዚህ በታች ተዘርዝረዋል።',
@@ -583,6 +665,233 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         stopSnow();
     }
+});
+document.addEventListener('mousemove', function(e) {
+    const glow = document.getElementById('mouseGlow');
+    if (glow) {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+    }
+});
+// Welcome Toast
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = '👋 Welcome to my portfolio am sisay!';
+        document.body.appendChild(toast);
+        setTimeout(function() {
+            toast.classList.add('show');
+        }, 500);
+        setTimeout(function() {
+            toast.classList.remove('show');
+            setTimeout(function() { toast.remove(); }, 500);
+        }, 5000);
+    }, 2000);
+});
+// ===== STAR RATING SYSTEM =====
+document.addEventListener('DOMContentLoaded', function() {
+    const stars = document.querySelectorAll('.star-rating i');
+    const ratingMessage = document.getElementById('ratingMessage');
+    const averageSpan = document.getElementById('averageRating');
+    const totalVotesSpan = document.getElementById('totalVotes');
+    
+    let currentRating = 0;
+    
+    // Load saved rating from localStorage
+    const savedRating = localStorage.getItem('userRating');
+    const savedAverage = localStorage.getItem('averageRating');
+    const savedVotes = localStorage.getItem('totalVotes');
+    
+    let averageRating = parseFloat(savedAverage) || 0;
+    let totalVotes = parseInt(savedVotes) || 0;
+    
+    // Display saved average
+    if (totalVotes > 0) {
+        averageSpan.textContent = averageRating.toFixed(1);
+        totalVotesSpan.textContent = totalVotes;
+    }
+    
+    // If user already rated
+    if (savedRating) {
+        currentRating = parseInt(savedRating);
+        highlightStars(currentRating);
+        ratingMessage.textContent = `⭐ You rated ${currentRating} out of 5 stars! Thank you! ❤️`;
+        ratingMessage.style.color = '#64ffda';
+    }
+    
+    // Star hover effect
+    stars.forEach(function(star) {
+        star.addEventListener('mouseenter', function() {
+            const value = parseInt(this.getAttribute('data-value'));
+            highlightStars(value, true);
+            ratingMessage.textContent = `${value} out of 5 stars`;
+        });
+        
+        star.addEventListener('mouseleave', function() {
+            if (currentRating > 0) {
+                highlightStars(currentRating, false);
+                ratingMessage.textContent =`⭐ You rated ${currentRating} out of 5 stars!`;
+            } else {
+                highlightStars(0, false);
+                ratingMessage.textContent = '⭐ Click a star to rate!';
+            }
+        });
+        
+        star.addEventListener('click', function() {
+            const value = parseInt(this.getAttribute('data-value'));
+            currentRating = value;
+            
+            // Save user rating
+            localStorage.setItem('userRating', value);
+            
+            // Update average
+            totalVotes++;
+            averageRating = ((averageRating * (totalVotes - 1)) + value) / totalVotes;
+            
+            localStorage.setItem('averageRating', averageRating);
+            localStorage.setItem('totalVotes', totalVotes);
+            
+            // Update display
+            highlightStars(value);
+            averageSpan.textContent = averageRating.toFixed(1);
+            totalVotesSpan.textContent = totalVotes;
+            
+            ratingMessage.textContent = `⭐ You rated ${value} out of 5 stars! Thank you! ❤️`;
+            ratingMessage.style.color = '#64ffda';
+            
+            // Add confetti effect
+            createConfetti();
+        });
+    });
+    
+    function highlightStars(count, isHover = false) {
+        stars.forEach(function(star, index) {
+            const value = parseInt(star.getAttribute('data-value'));
+            if (value <= count) {
+                star.classList.add('active');
+                if (isHover) {
+                    star.classList.add('hover');
+                }
+            } else {
+                star.classList.remove('active');
+                star.classList.remove('hover');
+            }
+        });
+    }
+    
+    // ===== CONFETTI EFFECT =====
+    function createConfetti() {
+        const colors = ['#64ffda', '#f4a261', '#ff6b6b', '#4a6cf7', '#f8f9fa'];
+        
+        for (let i = 0; i < 30; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.cssText = `
+                position: fixed;
+                left: ${Math.random() * 100}%;
+                top: -10px;
+                width: ${Math.random() * 8 + 4}px;
+                height: ${Math.random() * 8 + 4}px;
+                background: ${colors[Math.floor(Math.random() * colors.length)]};
+                border-radius: ${Math.random() > 0.5 ? '50%' : '2px'};
+                z-index: 9999;
+                pointer-events: none;
+                animation: confettiFall ${Math.random() * 2 + 2}s linear forwards;
+                animation-delay: ${Math.random() * 0.5}s;
+            `;
+            document.body.appendChild(confetti);
+            
+            setTimeout(function() {
+                confetti.remove();
+            }, 4000);
+        }
+    }
+    
+    // Add confetti keyframe if not exists
+    if (!document.getElementById('confettiStyle')) {
+        const style = document.createElement('style');
+        style.id = 'confettiStyle';
+        style.textContent = `
+            @keyframes confettiFall {
+                0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+                100% { transform: translateY(110vh) rotate(720deg) scale(0.2); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    console.log('✅ Star rating system initialized!');
+});
+// ============================================================
+// ===== MOUSE GLOW EFFECT =====
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const glow = document.getElementById('mouseGlow');
+    
+    if (!glow) {
+        console.log('❌ Mouse glow element not found');
+        return;
+    }
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    
+    // Track mouse position
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+    
+    // Smooth animation
+    function animateGlow() {
+        // Smooth follow with easing
+        currentX += (mouseX - currentX) * 0.1;
+        currentY += (mouseY - currentY) * 0.1;
+        
+        glow.style.left = currentX + 'px';
+        glow.style.top = currentY + 'px';
+        
+        requestAnimationFrame(animateGlow);
+    }
+    
+    animateGlow();
+    
+    // ===== CHANGE GLOW COLOR ON DIFFERENT SECTIONS =====
+    const sections = document.querySelectorAll('section, .hero');
+    
+    sections.forEach(function(section) {
+        section.addEventListener('mouseenter', function() {
+            const id = this.id || this.className;
+            
+            // Remove all glow classes
+            glow.classList.remove('about-glow', 'projects-glow', 'services-glow');
+            
+            // Add specific glow based on section
+            if (id === 'about' || id.includes('about')) {
+                glow.classList.add('about-glow');
+            } else if (id === 'projects' || id.includes('project')) {
+                glow.classList.add('projects-glow');
+            } else if (id === 'services' || id.includes('service')) {
+                glow.classList.add('services-glow');
+            } else {
+                // Default glow (already set in CSS)
+            }
+        });
+    });
+    
+    // Reset glow on hero
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.addEventListener('mouseenter', function() {
+            glow.classList.remove('about-glow', 'projects-glow', 'services-glow');
+        });
+    }
+    
+    console.log('✅ Mouse glow effect initialized!');
 });
 console.log('🚀 Portfolio loaded successfully!');
 console.log('👋 Built by siay dve');
