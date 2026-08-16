@@ -70,13 +70,30 @@ html {
     scroll-behavior: smooth;
 }
 
+ /* ===== ONE CONTINUOUS BACKGROUND ===== */
 body {
+    background: url('../images/best.jpg') center/cover fixed !important;
+    background-attachment: fixed !important;
+    min-height: 100vh;
     font-family: 'Inter', sans-serif;
-    background: var(--primary);
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
 }
+
+/* Remove background from all sections */
+.section-bg-about,
+.section-bg-skills,
+.section-bg-projects,
+.section-bg-services,
+.section-bg-stats,
+.section-bg-testimonials,
+.section-bg-contact{
+    
+    background: transparent !important;
+    background-image: none !important;
+}
+
 
 a {
     text-decoration: none;
@@ -1228,12 +1245,20 @@ section {
 }
 
 /* ===== FOOTER ===== */
+ /* ============================================================ */
+/* ===== REMOVE BACKGROUND FROM FOOTER & WEATHER ===== */
+/* ============================================================ */
+
+/* Footer — Solid background */
 footer {
-    border-top: 1px solid rgba(136, 146, 176, 0.06);
+    background: rgba(10, 25, 47, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(136, 146, 176, 0.08);
     padding: 32px 0;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
-
 footer p {
     color: var(--secondary);
     font-size: 14px;
@@ -2790,6 +2815,7 @@ section .container {
         font-size: 17px;
     }
 }
+
 /* ===== WEATHER WIDGET ===== */
 .weather-widget {
     display: flex;
@@ -3540,89 +3566,7 @@ nav a:hover {
         height: 6px;
     }
 }
-/* ===== SECTION BACKGROUND IMAGES ===== */
-
-/* Desktop */
-.section-bg-about,
-.section-bg-skills,
-.section-bg-projects,
-.section-bg-services,
-.section-bg-stats,
-.section-bg-testimonials,
-.section-bg-contact {
-    background: url('../images/best.jpg') center/cover fixed !important;
-    position: relative;
-    padding: 100px 0;
-    min-height: 100vh;
-    background-repeat: no-repeat;
-}
-
-/* ===== MOBILE FIX — All Devices ===== */
-
-/* Tablets */
-@media (max-width: 1024px) {
-    .section-bg-about,
-    .section-bg-skills,
-    .section-bg-projects,
-    .section-bg-services,
-    .section-bg-stats,
-    .section-bg-testimonials,
-    .section-bg-contact {
-        background: url('../images/best.jpg') center/cover scroll !important;
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-        padding: 60px 0 !important;
-        min-height: auto !important;
-    }
-}
-
-/* Mobile Phones */
-@media (max-width: 768px) {
-    .section-bg-about,
-    .section-bg-skills,
-    .section-bg-projects,
-    .section-bg-services,
-    .section-bg-stats,
-    .section-bg-testimonials,
-    .section-bg-contact {
-        background: url('../images/best.jpg') center/cover scroll !important;
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-        padding: 50px 0 !important;
-        min-height: auto !important;
-    }
-
-    /* Also ensure sections have enough height for content */
-    .section-bg-about .container,
-    .section-bg-skills .container,
-    .section-bg-projects .container,
-    .section-bg-services .container,
-    .section-bg-stats .container,
-    .section-bg-testimonials .container,
-    .section-bg-contact .container {
-        min-height: auto;
-    }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-    .section-bg-about,
-    .section-bg-skills,
-    .section-bg-projects,
-    .section-bg-services,
-    .section-bg-stats,
-    .section-bg-testimonials,
-    .section-bg-contact {
-        background: url('../images/best.jpg') center/cover scroll !important;
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-        padding: 40px 0 !important;
-        min-height: auto !important;
-    }
-}
+ 
  /* ===== MOUSE GLOW EFFECT ===== */
 .mouse-glow {
     position: fixed;
@@ -3662,13 +3606,7 @@ nav a:hover {
     }
 }
  /* ===== RATING SECTION BACKGROUND ===== */
-.section-bg-rating {
-    background: url('../images/best.jpg') center/cover fixed !important;
-    position: relative;
-    padding: 80px 0;
-    min-height: 400px;
-}
-
+  
 /* ===== OVERLAY ===== */
 .section-overlay {
     position: absolute;
@@ -3818,5 +3756,156 @@ nav a:hover {
 
     .rating-section {
         padding: 24px 16px;
+    }
+}
+/* ===== MOBILE FIX — ONE CONTINUOUS BACKGROUND ===== */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll !important;
+        background-position: center !important;
+        background-size: cover !important;
+    }
+}
+/* ============================================================ */
+/* ===== RATE SECTION — MATCH OTHER SECTIONS ===== */
+/* ============================================================ */
+
+/* Rate section uses body background (same as other sections) */
+.section-bg-rating {
+    background: transparent !important;
+    background-image: none !important;
+    position: relative;
+    padding: 80px 0;
+    min-height: 400px;
+}
+
+/* Overlay for readability (same as other sections) */
+.section-bg-rating .section-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.82);
+    z-index: 0;
+}
+
+/* Rate content above overlay */
+#rating .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Rating Card */
+.rating-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    margin: 20px 0;
+}
+
+/* ===== LIGHT MODE ===== */
+[data-theme="light"] .section-bg-rating .section-overlay {
+    background: rgba(248, 249, 250, 0.88) !important;
+}
+
+[data-theme="light"] .rating-section {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== MOBILE FIX — Not zoomed ===== */
+@media (max-width: 768px) {
+    .section-bg-rating {
+        padding: 50px 0 !important;
+        min-height: auto !important;
+        background-attachment: scroll !important;
+        background-position: center !important;
+        background-size: cover !important;
+    }
+}
+/* ============================================================ */
+/* ===== WEATHER & RATE — MATCH FOOTER BACKGROUND ===== */
+/* ============================================================ */
+
+/* Weather Section — Match Footer */
+.section-bg-weather {
+    background: rgba(10, 25, 47, 0.95) !important;
+    background-image: none !important;
+    backdrop-filter: blur(10px);
+    padding: 40px 0;
+    position: relative;
+}
+
+/* Rate My Work Section — Match Footer */
+.section-bg-rating {
+    background: rgba(10, 25, 47, 0.95) !important;
+    background-image: none !important;
+    backdrop-filter: blur(10px);
+    padding: 60px 0;
+    position: relative;
+}
+
+/* Remove overlays (not needed) */
+#rating .section-overlay,
+.section-bg-weather .section-overlay {
+    display: none !important;
+}
+
+/* ===== LIGHT MODE ===== */
+[data-theme="light"] .section-bg-weather {
+    background: rgba(248, 249, 250, 0.95) !important;
+}
+
+[data-theme="light"] .section-bg-rating {
+    background: rgba(248, 249, 250, 0.95) !important;
+}
+
+/* ===== KEEP WEATHER WIDGET STYLES ===== */
+.weather-widget {
+    background: rgba(10, 25, 47, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(100, 255, 218, 0.1) !important;
+    border-radius: 16px;
+    padding: 16px 24px;
+    max-width: 400px;
+    margin: 20px auto;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .weather-widget {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+/* ===== KEEP RATING CARD STYLES ===== */
+.rating-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    margin: 20px 0;
+}
+
+[data-theme="light"] .rating-section {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .section-bg-weather {
+        padding: 30px 0 !important;
+    }
+    
+    .section-bg-rating {
+        padding: 40px 0 !important;
     }
 }
