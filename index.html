@@ -74,6 +74,15 @@
 
  <!-- ===== MOBILE MENU (Slides from Right) ===== -->
 <nav class="mobile-menu" id="mobileMenu">
+    <!-- Profile Section at Top -->
+    <div class="mobile-menu-profile">
+        <img src="images/coder.jpg" alt="Sisay Abebayew" class="mobile-menu-avatar" />
+        <div class="mobile-menu-name">
+            <span class="mobile-name">Sisay Abebayew</span>
+            <span class="mobile-role">Full-Stack Developer</span>
+        </div>
+    </div>
+
     <ul>
         <li><a href="#about" data-key="nav-about">About</a></li>
         <li><a href="#skills" data-key="nav-skills">Skills</a></li>
@@ -99,14 +108,9 @@
     <!-- ===== HERO ===== -->
 <section class="hero" id="home">
     <!-- Video Background -->
-    <div class="hero-video-bg">
-        <video autoplay muted loop playsinline id="heroVideo" preload="auto" poster="images/ai_vidio.mp4">
-            <source src="images/ai_vidio.mp4" type="video/mp4" />
-            <!-- Fallback image if video doesn't load -->
-             <source src="images/ai_vidio.mp4" type="video/webm" />
-             <img src="images/best.jpg" alt="Background" />
-        </video>
-        <div class="hero-overlay"></div>
+    <div class="hero-bg-image">
+   <img src="images/hero-image.jpg" alt="Background" />
+    <div class="hero-overlay"></div>
     </div>
      <div class="container">
         <div class="hero-content">
@@ -798,27 +802,32 @@
         </div>
     </div>
 </section>
-<!-- ===== WEATHER WIDGET ===== -->
-<div class="weather-widget" id="weatherWidget">
-    <div class="weather-icon">
-        <i class="fas fa-cloud-sun"></i>
-    </div>
-    <div class="weather-info">
-        <div class="weather-temp" id="weatherTemp">--°C</div>
-        <div class="weather-desc" id="weatherDesc" data-key="weather-loading">Loading weather...</div>
-        <div class="weather-location" id="weatherLocation">Addis Ababa, ET</div>
-    </div>
-    <div class="weather-details">
-        <div class="weather-detail">
-            <i class="fas fa-tint"></i>
-            <span id="weatherHumidity">--%</span>
+ <!-- ===== WEATHER ===== -->
+<section id="weather" class="section-bg-weather">
+    <div class="section-overlay"></div>
+    <div class="container">
+        <div class="weather-widget" id="weatherWidget">
+            <div class="weather-icon">
+                <i class="fas fa-cloud-sun"></i>
+            </div>
+            <div class="weather-info">
+                <div class="weather-temp" id="weatherTemp">--°C</div>
+                <div class="weather-desc" id="weatherDesc">Loading weather...</div>
+                <div class="weather-location" id="weatherLocation">Addis Ababa, ET</div>
+            </div>
+            <div class="weather-details">
+                <div class="weather-detail">
+                    <i class="fas fa-tint"></i>
+                    <span id="weatherHumidity">--%</span>
+                </div>
+                <div class="weather-detail">
+                    <i class="fas fa-wind"></i>
+                    <span id="weatherWind">-- km/h</span>
+                </div>
+            </div>
         </div>
-        <div class="weather-detail">
-            <i class="fas fa-wind"></i>
-            <span id="weatherWind">-- km/h</span>
-        </div>
     </div>
-</div>
+</section>
     <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">

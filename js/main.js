@@ -678,8 +678,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         const toast = document.createElement('div');
         toast.className = 'toast';
-        toast.innerHTML = '👋 Welcome to my portfolio am sisay!';
-        document.body.appendChild(toast);
+         document.body.appendChild(toast);
         setTimeout(function() {
             toast.classList.add('show');
         }, 500);

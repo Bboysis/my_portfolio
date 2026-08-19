@@ -88,7 +88,9 @@ body {
 .section-bg-services,
 .section-bg-stats,
 .section-bg-testimonials,
-.section-bg-contact{
+.section-bg-contact,
+.section-bg-weather,
+.section-bg-rating{
     
     background: transparent !important;
     background-image: none !important;
@@ -233,9 +235,8 @@ nav a:hover::after {
     overflow: hidden;
 }
 
-/* Video Background */
- /* ===== HERO VIDEO BACKGROUND ===== */
-.hero-video-bg {
+ /* ===== HERO BACKGROUND IMAGE ===== */
+.hero-bg-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -245,63 +246,83 @@ nav a:hover::after {
     overflow: hidden;
 }
 
-.hero-video-bg video {
+.hero-bg-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
 }
 
-.hero-video-bg video::-webkit-media-controls {
-    display: none !important;
-}
-
-/* Video fallback image */
-.hero-video-bg .video-fallback {
+.hero-bg-image .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    background: rgba(10, 25, 47, 0.7);
+    z-index: 1;
+}
+/* ============================================================ */
+/* ===== MOBILE MENU — PROFILE SECTION ===== */
+/* ============================================================ */
+
+.mobile-menu-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0 20px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.mobile-menu-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
     object-fit: cover;
-    display: none;
+    border: 2px solid var(--accent);
+    flex-shrink: 0;
 }
 
-/* Show fallback when video fails */
-.hero-video-bg video:not([src]) + .video-fallback,
-.hero-video-bg video.error + .video-fallback {
-    display: block;
+.mobile-menu-name {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
-/* ===== MOBILE VIDEO FIX ===== */
-@media (max-width: 768px) {
-    .hero-video-bg video {
-        object-fit: cover;
-        object-position: center;
-        width: 100%;
-        height: 100%;
-    }
+.mobile-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
-/* ===== REDUCED MOTION ===== */
-@media (prefers-reduced-motion: reduce) {
-    .hero-video-bg video {
-        display: none;
-    }
-    .hero-video-bg .video-fallback {
-        display: block;
-    }
+.mobile-role {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
 }
 
-.hero-video-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: none;
+/* Light Mode */
+[data-theme="light"] .mobile-menu-profile {
+    border-bottom-color: rgba(74, 108, 247, 0.1);
 }
 
-/* Video fallback for browsers that don't support video */
-.hero-video-bg video:not([src]) + img {
-    display: block;
+[data-theme="light"] .mobile-name {
+    color: #1a1a2e;
 }
 
+[data-theme="light"] .mobile-role {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .mobile-menu-avatar {
+    border-color: #4a6cf7;
+}
+
+/* ===== ADJUST MOBILE MENU PADDING ===== */
+.mobile-menu {
+    padding-top: 30px !important;
+}
 /* Overlay to make text readable */
 .hero-overlay {
     position: absolute;
@@ -3605,172 +3626,19 @@ nav a:hover {
         display: none;
     }
 }
- /* ===== RATING SECTION BACKGROUND ===== */
-  
-/* ===== OVERLAY ===== */
-.section-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(10, 25, 47, 0.85);
-    z-index: 0;
-}
+  /* ============================================================ */
+/* ===== WEATHER & RATE — SAME BACKGROUND AS OTHER SECTIONS ==== */
+/* ============================================================ */
 
-/* ===== RATING CONTENT (Above Overlay) ===== */
-#rating .container {
+/* Weather — Use body background (same as other sections) */
+.section-bg-weather {
+    background: transparent !important;
+    background-image: none !important;
     position: relative;
-    z-index: 1;
+    padding: 40px 0;
 }
 
-/* ===== RATING CARD ===== */
-.rating-section {
-    text-align: center;
-    padding: 40px 20px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    margin: 20px 0;
-}
-
-/* ===== RATING TITLES (White on dark background) ===== */
-.rating-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 28px;
-    color: #ffffff;
-    margin-bottom: 6px;
-}
-
-.rating-subtitle {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 15px;
-    margin-bottom: 20px;
-}
-
-/* ===== STARS ===== */
-.star-rating {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    font-size: 40px;
-    cursor: pointer;
-    margin-bottom: 16px;
-}
-
-.star-rating i {
-    color: rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-    user-select: none;
-}
-
-.star-rating i:hover {
-    transform: scale(1.2);
-}
-
-.star-rating i.active {
-    color: #f4a261;
-}
-
-.star-rating i.hover {
-    color: #f4a261;
-    transform: scale(1.1);
-}
-
-/* ===== RATING MESSAGES ===== */
-.rating-message {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 8px;
-    min-height: 30px;
-}
-
-.rating-average {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-/* ===== LIGHT MODE ===== */
-[data-theme="light"] .section-bg-rating .section-overlay {
-    background: rgba(248, 249, 250, 0.88) !important;
-}
-
-[data-theme="light"] .rating-title {
-    color: #1a1a2e;
-}
-
-[data-theme="light"] .rating-subtitle {
-    color: #6c757d;
-}
-
-[data-theme="light"] .rating-message {
-    color: #6c757d;
-}
-
-[data-theme="light"] .rating-average {
-    color: #6c757d;
-}
-
-[data-theme="light"] .star-rating i {
-    color: #d0d0d0;
-}
-
-[data-theme="light"] .star-rating i.active {
-    color: #f4a261;
-}
-
-[data-theme="light"] .rating-section {
-    background: rgba(255, 255, 255, 0.7);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-    .section-bg-rating {
-        background-attachment: scroll !important;
-        background-position: center !important;
-        background-size: cover !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .star-rating {
-        font-size: 32px;
-        gap: 6px;
-    }
-    
-    .rating-title {
-        font-size: 22px;
-    }
-    
-    .section-bg-rating {
-        padding: 50px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .star-rating {
-        font-size: 28px;
-        gap: 4px;
-    }
-
-    .rating-section {
-        padding: 24px 16px;
-    }
-}
-/* ===== MOBILE FIX — ONE CONTINUOUS BACKGROUND ===== */
-@media (max-width: 768px) {
-    body {
-        background-attachment: scroll !important;
-        background-position: center !important;
-        background-size: cover !important;
-    }
-}
-/* ============================================================ */
-/* ===== RATE SECTION — MATCH OTHER SECTIONS ===== */
-/* ============================================================ */
-
-/* Rate section uses body background (same as other sections) */
+/* Rate — Use body background (same as other sections) */
 .section-bg-rating {
     background: transparent !important;
     background-image: none !important;
@@ -3779,7 +3647,18 @@ nav a:hover {
     min-height: 400px;
 }
 
-/* Overlay for readability (same as other sections) */
+/* Overlay for Weather */
+.section-bg-weather .section-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.82);
+    z-index: 0;
+}
+
+/* Overlay for Rate */
 .section-bg-rating .section-overlay {
     position: absolute;
     top: 0;
@@ -3790,10 +3669,26 @@ nav a:hover {
     z-index: 0;
 }
 
-/* Rate content above overlay */
+
+/* Content above overlay */
+#weather .container,
 #rating .container {
     position: relative;
     z-index: 1;
+}
+
+/* Weather Widget */
+.weather-widget {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 16px 24px;
+    max-width: 400px;
+    margin: 20px auto;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
 /* Rating Card */
@@ -3808,91 +3703,14 @@ nav a:hover {
 }
 
 /* ===== LIGHT MODE ===== */
+[data-theme="light"] .section-bg-weather .section-overlay,
 [data-theme="light"] .section-bg-rating .section-overlay {
     background: rgba(248, 249, 250, 0.88) !important;
 }
 
-[data-theme="light"] .rating-section {
-    background: rgba(255, 255, 255, 0.7);
-}
-
-/* ===== MOBILE FIX — Not zoomed ===== */
-@media (max-width: 768px) {
-    .section-bg-rating {
-        padding: 50px 0 !important;
-        min-height: auto !important;
-        background-attachment: scroll !important;
-        background-position: center !important;
-        background-size: cover !important;
-    }
-}
-/* ============================================================ */
-/* ===== WEATHER & RATE — MATCH FOOTER BACKGROUND ===== */
-/* ============================================================ */
-
-/* Weather Section — Match Footer */
-.section-bg-weather {
-    background: rgba(10, 25, 47, 0.95) !important;
-    background-image: none !important;
-    backdrop-filter: blur(10px);
-    padding: 40px 0;
-    position: relative;
-}
-
-/* Rate My Work Section — Match Footer */
-.section-bg-rating {
-    background: rgba(10, 25, 47, 0.95) !important;
-    background-image: none !important;
-    backdrop-filter: blur(10px);
-    padding: 60px 0;
-    position: relative;
-}
-
-/* Remove overlays (not needed) */
-#rating .section-overlay,
-.section-bg-weather .section-overlay {
-    display: none !important;
-}
-
-/* ===== LIGHT MODE ===== */
-[data-theme="light"] .section-bg-weather {
-    background: rgba(248, 249, 250, 0.95) !important;
-}
-
-[data-theme="light"] .section-bg-rating {
-    background: rgba(248, 249, 250, 0.95) !important;
-}
-
-/* ===== KEEP WEATHER WIDGET STYLES ===== */
-.weather-widget {
-    background: rgba(10, 25, 47, 0.85) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    border: 1px solid rgba(100, 255, 218, 0.1) !important;
-    border-radius: 16px;
-    padding: 16px 24px;
-    max-width: 400px;
-    margin: 20px auto;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
 [data-theme="light"] .weather-widget {
-    background: rgba(255, 255, 255, 0.9) !important;
-    border: 1px solid rgba(0, 0, 0, 0.06) !important;
-}
-
-/* ===== KEEP RATING CARD STYLES ===== */
-.rating-section {
-    text-align: center;
-    padding: 40px 20px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 [data-theme="light"] .rating-section {
@@ -3906,6 +3724,75 @@ nav a:hover {
     }
     
     .section-bg-rating {
-        padding: 40px 0 !important;
+        padding: 50px 0 !important;
+        min-height: auto !important;
+    }
+}
+/* ============================================================ */
+/* ===== STAR RATING — GLOW EFFECT ===== */
+/* ============================================================ */
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-size: 45px;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.star-rating i {
+    color: rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+/* Hover effect */
+.star-rating i:hover {
+    transform: scale(1.25);
+    color: #f4a261;
+    text-shadow: 0 0 30px rgba(244, 162, 97, 0.6);
+}
+
+/* Active (selected) stars */
+.star-rating i.active {
+    color: #f4a261;
+    text-shadow: 0 0 30px rgba(244, 162, 97, 0.5);
+}
+
+/* Hover effect on stars */
+.star-rating i.hover {
+    color: #f4a261;
+    transform: scale(1.15);
+    text-shadow: 0 0 30px rgba(244, 162, 97, 0.4);
+}
+
+/* Light Mode */
+[data-theme="light"] .star-rating i {
+    color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .star-rating i.active {
+    color: #f4a261;
+    text-shadow: 0 0 30px rgba(244, 162, 97, 0.3);
+}
+
+[data-theme="light"] .star-rating i.hover {
+    color: #f4a261;
+    text-shadow: 0 0 30px rgba(244, 162, 97, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .star-rating {
+        font-size: 35px;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .star-rating {
+        font-size: 28px;
+        gap: 6px;
     }
 }
