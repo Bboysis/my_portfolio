@@ -54,17 +54,17 @@ This is my personal portfolio website — a modern, fully responsive, and intera
 
 ## 📁 Project Structure
 portfolio/
-├── index.html          # Main HTML file
+├── index.html          
 ├── css/
-│   └── style.css       # All styles
+│   └── style.css        
 ├── js/
-│   └── main.js         # All JavaScript
+│   └── main.js          
 ├── images/
-│   ├── 1.jpg           # Profile photo
-│   ├── best.jpg        # Background image
-│   ├── hero-bg.jpg     # Hero background
-│   └── ...             # Project screenshots
-└── README.md           # This file
+│   ├── 1.jpg            
+│   ├── best.jpg         
+│   ├── hero-bg.jpg      
+│   └── ...              
+└── README.md            
 ---
 
 ## 🚀 Sections
@@ -145,4 +145,4 @@ portfolio/
 
 ---
 
-Built with ❤️ by Sisay Abebayew
+Built with by Sisay Abebayew
