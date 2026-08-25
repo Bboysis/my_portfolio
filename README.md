@@ -53,6 +53,7 @@ This is my personal portfolio website — a modern, fully responsive, and intera
 ---
 
 ## 📁 Project Structure
+
 portfolio/
 ├── index.html          
 ├── css/
